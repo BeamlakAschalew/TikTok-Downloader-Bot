@@ -6,6 +6,6 @@ services:
       - API_HASH=${23565022ffa2e494a81e4a4430981cfb}
       - API_KEY=${26586396}
       - BOT_TOKEN=${6220604219:AAEp9K-koanqUPg-zZr3NrvTL4i-kbkdK-k}
-      - WORKERS=${4}
+      - WORKERS=4
       - CHANNEL_URL=${t.me/DREAM_SPORT}
       - BOT_URL=${Tiktokvideos_Save_Bot}
