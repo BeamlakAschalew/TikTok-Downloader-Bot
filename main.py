@@ -33,10 +33,8 @@ app = Client("JayBee", bot_token=bot_token, api_id=api, api_hash=hash, workers=w
 def start(client, message):
     kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/TerminalWarlord/TikTok-Downloader-Bot/")]]
     reply_markup = InlineKeyboardMarkup(kb)
-    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am **TikTok Downloader Bot**.\nI can download TikTok video without Watermark.\n\n"
-                          "__**Developer :**__ __@JayBeeDev__\n"
-                          "__**Language :**__ __Python__\n"
-                          "__**Framework :**__ __🔥 Pyrogram__",
+    app.send_message(chat_id=message.from_user.id, text=f"ሰላም እንዴት ነህ/ሽ ፣ እኔ ቲክቶክ ቪድዮ Saver ነኝ፣ የቲክቶክ ቪድዮዎችን ያለ Water Mark ማውረድ እችላለሁ\n\n"
+                          "__**ፈጣሪ :**__ __@BeamlakAschalew__\n",
                      parse_mode='md',
                      reply_markup=reply_markup)
 
@@ -45,10 +43,10 @@ def start(client, message):
 
 @app.on_message(filters.command('help'))
 def help(client, message):
-    kb = [[InlineKeyboardButton('Channel 🛡', url=chnnl),InlineKeyboardButton('Repo 🔰', url="https://github.com/TerminalWarlord/TikTok-Downloader-Bot/")]]
+    kb = [[InlineKeyboardButton('ቻናላችንን ይቀላቀሉ 🛡', url=chnnl),]]
     reply_markup = InlineKeyboardMarkup(kb)
-    app.send_message(chat_id=message.from_user.id, text=f"Hello there, I am **TikTok Downloader Bot**.\nI can download any TikTok video from a given link.\n\n"
-                                            "__Send me a TikTok video link__",
+    app.send_message(chat_id=message.from_user.id, text=f"ሰላም እንዴት ነህ/ሽ ፣ እኔ ቲክቶክ ቪድዮ Saver ነኝ፣ የቲክቶክ ቪድዮዎችን ያለ Water Mark ማውረድ እችላለሁ\n\n"
+                                            "__የቲክቶክ ቪድዮ ሊንክ ይላኩልኝ__",
                      parse_mode='md',
                      reply_markup=reply_markup)
 
@@ -56,7 +54,7 @@ def help(client, message):
 @app.on_message((filters.regex("http://")|filters.regex("https://")) & (filters.regex('tiktok')|filters.regex('douyin')))
 def tiktok_dl(client, message):
     a = app.send_message(chat_id=message.chat.id,
-                         text='__Downloading File to the Server__',
+                         text='__ወደ ሰርቨራችን በመጫን ላይ...__',
                          parse_mode='md')
     link = re.findall(r'\bhttps?://.*[(tiktok|douyin)]\S+', message.text)[0]
     link = link.split("?")[0]
@@ -100,23 +98,23 @@ def tiktok_dl(client, message):
                 if show == 1:
                     try:
                         a.edit(f'__**URL :**__ __{message.text}__\n'
-                               f'__**Total Size :**__ __{total_size} MB__\n'
-                               f'__**Downloaded :**__ __{percent}%__\n',
+                               f'__**አጠቃላይ የፋይል መጠን :**__ __{total_size} MB__\n'
+                               f'__**የጫነው መጠን :**__ __{percent}%__\n',
                                disable_web_preview=False)
                     except:
                         pass
                     if percent == 100:
                         show = 0
 
-        a.edit(f'__Downloaded to the server!\n'
-               f'Uploading to Telegram Now ⏳__')
+        a.edit(f'__ወደ ሰርቨር ጭኗል!\n'
+               f'ወደ ቴሌግራም በመጫን ላይ... ⏳__')
         start = time.time()
         title = filename
         app.send_document(chat_id=message.chat.id,
                           document=f"./{directory}/{filename}",
-                          caption=f"**File :** __{filename}__\n"
-                          f"**Size :** __{total_size} MB__\n\n"
-                          f"__Uploaded by @{BOT_URL}__",
+                          caption=f"**የፋይል ስም :** __{filename}__\n"
+                          f"**የፋይል መጠን :** __{total_size} MB__\n\n"
+                          f"__በ @{BOT_URL} ቦት የተጫነ__",
                           file_name=f"{directory}",
                           parse_mode='md',
                           progress=progress,
