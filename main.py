@@ -33,7 +33,7 @@ def start(client, message):
     kb = [[InlineKeyboardButton('ቻናላችንን ይቀላቀሉ ⚽', url=chnnl),]]
     reply_markup = InlineKeyboardMarkup(kb)
     app.send_message(chat_id=message.from_user.id, text=f"ሰላም እንዴት ነህ/ሽ ፣ እኔ ቲክቶክ ቪድዮ Saver ነኝ፣ የቲክቶክ ቪድዮዎችን ያለ Water Mark ማውረድ እችላለሁ\n\n"
-                          "__**ፈጣሪ :**__ __@BeamlakAschalew__\n",
+                          "__**በ**__ __@DREAM_SPORT__ የተሰራ\n",
                      parse_mode='md',
                      reply_markup=reply_markup)
 
