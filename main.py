@@ -65,7 +65,7 @@ def tiktok_dl(client, message):
       "link": link
     }
     headers = {
-      'x-rapidapi-host': "tiktok-info.p.rapidapi.com",
+      'x-rapidapi-host': "tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com",
       'x-rapidapi-key': "cea7ad19b5mshbc7d971f41a0637p11d63djsn58869ff27a79"
     }
     
@@ -73,7 +73,7 @@ def tiktok_dl(client, message):
     #Using the default one can stop working any moment 
     
     api = f"https://tiktok-info.p.rapidapi.com/dl/"
-    r = requests.get(api, params=params, headers=headers).json()['videoLinks']['download']
+    r = requests.get(api, params=params, headers=headers).json()['video']
     directory = str(round(time.time()))
     filename = str(int(time.time()))+'.mp4'
     size = int(requests.head(r).headers['Content-length'])
