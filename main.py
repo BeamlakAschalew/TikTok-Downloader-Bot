@@ -73,7 +73,7 @@ def tiktok_dl(client, message):
     #Using the default one can stop working any moment 
     
     api = f"https://tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com/vid/index"
-    r = requests.get(api, params=params, headers=headers).json()['video']
+    r = requests.get(api, params=params, headers=headers).json()
     directory = str(round(time.time()))
     filename = str(int(time.time()))+'.mp4'
     size = int(requests.head(r).headers['Content-length'])
