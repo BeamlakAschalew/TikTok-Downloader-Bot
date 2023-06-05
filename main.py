@@ -72,7 +72,7 @@ def tiktok_dl(client, message):
     ### Get your Free TikTok API from https://rapidapi.com/TerminalWarlord/api/tiktok-info/
     #Using the default one can stop working any moment 
     
-    api = f"https://tiktok-info.p.rapidapi.com/dl/"
+    api = f"https://tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com/vid/index"
     r = requests.get(api, params=params, headers=headers).json()['video'][0]
     directory = str(round(time.time()))
     filename = str(int(time.time()))+'.mp4'
